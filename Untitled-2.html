@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLOBUS — Нарын</title>
+  <style>
+   body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at center, #ffffff 40%, #dbeafe 80%, #1e3a8a 100%);
+  color: #000;
+  background-attachment: fixed;
+}
+
+   header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(to right, #2563eb, #06b6d4);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+header a {
+  color: white;
+}
+header .logo {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+    header .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    header .logo {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: linear-gradient(to right, #2563eb, #06b6d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #fff;
+    }
+    nav a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: radial-gradient(circle at center, rgba(59,130,246,0.1), white 70%);
+    }
+    .hero h1 {
+      font-size: 48px;
+      background: linear-gradient(to right, #2563eb, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      color: #333;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+    }
+    .btn-main {
+      background: linear-gradient(to right, #2563eb, #06b6d4);
+      color: #fff;
+    }
+    .btn-outline {
+      border: 1px solid #2563eb;
+      color: #2563eb;
+    }
+  .promo {
+  display: grid;
+  gap: 20px;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+}
+
+.shelves {
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+}
+
+.shelf-item {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 10px rgba(37,99,235,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shelf-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(37,99,235,0.4);
+}
+
+.shelf-item .placeholder {
+  height: 100px;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+}
+
+    .product {
+      display: flex;
+      background: rgba(0,0,0,0.03);
+      border-radius: 10px;
+      padding: 15px;
+      align-items: center;
+      gap: 20px;
+    }
+    .product img {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .prices {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+    }
+    .old-price {
+      text-decoration: line-through;
+      color: rgba(0,0,0,0.6);
+    }
+    .discount {
+      background: #16a34a;
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 10px;
+      font-size: 12px;
+    }
+    .shelves {
+  background: none;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+}
+
+.shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.shelf-item {
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shelf-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(37, 99, 235, 0.5);
+}
+
+.shelf-item .placeholder {
+  height: 100px;
+  background: rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: white;
+  font-size: 13px;
+}
+
+    
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      border-radius: 10px;
+    }
+   footer {
+  border-top: none;
+  text-align: center;
+  padding: 30px 20px;
+  color: white;
+  background: linear-gradient(to right, #2563eb, #06b6d4);
+  box-shadow: 0 -4px 10px rgba(37, 99, 235, 0.3);
+}
+footer p {
+  margin: 5px 0;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">G</div>
+      <div>
+        <strong>GLOBUS — Нарын</strong><br>
+        <small>ул. Ленина, 41, Нарын • +996 312 91 06 60</small>
+      </div>
+    </div>
+    <nav>
+      <a href="#promos">Скидки</a>
+      <a href="#shelves">Полки</a>
+      <a href="#location">Локация</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Низкие цены в GLOBUS — Нарын</h1>
+    <p>Самые выгодные предложения и сравнение цен прямо здесь!</p>
+    <div class="buttons">
+      <a href="#shelves" class="btn-outline">Смотреть полки</a>
+      <a href="#promos" class="btn-main">Акции недели</a>
+    </div>
+  </section>
+
+  <section id="promos">
+    <h2>🔥 Акции недели</h2>
+    <div class="promo">
+      <div class="product">
+        <img src="https://avatars.mds.yandex.net/i?id=b8d465fdc4b5cb3d4b3ee28bba053772_l-9066083-images-thumbs&n=13" alt="Молоко 1л">
+        <div>
+          <h3>Молоко 1л</h3>
+          <div class="prices">
+            <span class="old-price">120 сом</span>
+            <span class="new-price"><strong>99 сом</strong></span>
+            <span class="discount">-18%</span>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <img src="https://leonardo.edadeal.io/dyn/re/get-edadeal/2353975/8136f86ceba550e90d4a1b9ae92039f3/orig?res=l" alt="Хлеб">
+        <div>
+          <h3>Хлеб</h3>
+          <div class="prices">
+            <span class="old-price">40 сом</span>
+            <span class="new-price"><strong>35 сом</strong></span>
+            <span class="discount">-12%</span>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <img src="https://sibprod.info/upload/iblock/dea/dea675b51f505a97381c98343811f401.jpeg" alt="Яйца 10шт">
+        <div>
+          <h3>Яйца 10шт</h3>
+          <div class="prices">
+            <span class="old-price">110 сом</span>
+            <span class="new-price"><strong>95 сом</strong></span>
+            <span class="discount">-13%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="shelves">
+    <h2>🛒 Полки с товарами</h2>
+    <div class="shelves">
+      <h3>Полка: Молочные продукты</h3>
+      <div class="shelf-grid">
+        <div class="shelf-item">
+          <div class="placeholder">Фото товара</div>
+          <div>Название</div>
+          <div class="old-price">Было XX сом</div>
+          <div><strong>YY сом</strong></div>
+        </div>
+        <div class="shelf-item">
+          <div class="placeholder">Фото товара</div>
+          <div>Название</div>
+          <div class="old-price">Было XX сом</div>
+          <div><strong>YY сом</strong></div>
+        </div>
+        <div class="shelf-item">
+          <div class="placeholder">Фото товара</div>
+          <div>Название</div>
+          <div class="old-price">Было XX сом</div>
+          <div><strong>YY сом</strong></div>
+        </div>
+        <div class="shelf-item">
+          <div class="placeholder">Фото товара</div>
+          <div>Название</div>
+          <div class="old-price">Было XX сом</div>
+          <div><strong>YY сом</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="location">
+    <h2>📍 Где нас найти</h2>
+    <p style="text-align:center; color:#555">ул. Ленина, 41, Нарын • +996 312 91 06 60</p>
+    <iframe src="https://www.google.com/maps?q=GLOBUS%20Нарын%20ул.%20Ленина%2041&output=embed" allowfullscreen loading="lazy"></iframe>
+  </section>
+
+  <footer>
+<p>© 2025 GLOBUS — Нарын</p>
+</footer>
+
+</body>
+</html>
